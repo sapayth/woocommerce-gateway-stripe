@@ -457,6 +457,9 @@ export const confirmWalletPayment = async ( api, jQueryForm ) => {
 					.getStripe()
 					.confirmCashappPayment( clientSecret, {
 						return_url: returnURL,
+						payment_method: {
+							type: 'cashapp',
+						},
 					} );
 				break;
 			default:
